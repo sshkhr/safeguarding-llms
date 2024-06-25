@@ -6,14 +6,14 @@ import os
 from dotenv import load_dotenv
 
 
-def extract_key_topic():
+def extract_key_topic(query):
     load_dotenv()
 
     client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
     response = client.chat.completions.create(model="gpt-3.5-turbo",
     messages = [
         {"role": "system", "content": "You are a helpful assistant that extracts key topics from sentences."},
-        {"role": "user", "content": "What are some latest papers on key value caching in machine learning?"}, # TODO: Extract user message from Colang and pass to function
+        {"role": "user", "content": query},
         {"role": "assistant", "content": "Give me ONLY the name of the research topic from this sentence (just the named entity, strictly under 5 words):"}
     ])
 
