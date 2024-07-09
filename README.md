@@ -4,7 +4,7 @@
 
 ![Workshop](https://img.shields.io/badge/Workshop-TMLS%202024-blue) 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo/workshop-llm-safeguarding/blob/main/demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/sshkhr/safeguarding-llms/blob/main/demo.ipynb)
 ![License](https://img.shields.io/github/license/sshkhr/safeguarding-llms)
 
 Welcome to the official repository for the workshop **"A Practitioner's Guide To Safeguarding Your LLM Applications"** at the Toronto Machine Learning Society conference on July 11, 2024. This repository contains all the code and resources you'll need to follow along with the workshop.
@@ -61,7 +61,7 @@ You can also run the code in Google Colab. Follow these steps:
 
 1. **Open the repository in Colab:**
 
-    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-repo/workshop-llm-safeguarding/blob/main/demo.ipynb)
+    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/sshkhr/safeguarding-llms/blob/main/demo.ipynb)
 
 2. **Make a copy of the notebook:**
 
