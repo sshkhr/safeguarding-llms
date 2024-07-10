@@ -1,10 +1,8 @@
-🚨 **Note:** The links in this tutorial to the slides and notebook will be updated with the final version before the workshop begins.
-
 # Workshop: A Practitioner's Guide To Safeguarding Your LLM Applications
 
 ![Workshop](https://img.shields.io/badge/Workshop-TMLS%202024-blue) 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/sshkhr/safeguarding-llms/blob/main/demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/sshkhr/safeguarding-llms/blob/main/workshop.ipynb)
 ![License](https://img.shields.io/github/license/sshkhr/safeguarding-llms)
 
 Welcome to the official repository for the workshop **"A Practitioner's Guide To Safeguarding Your LLM Applications"** at the Toronto Machine Learning Society conference on July 11, 2024. This repository contains all the code and resources you'll need to follow along with the workshop.
@@ -22,7 +20,7 @@ Welcome to the official repository for the workshop **"A Practitioner's Guide To
 
 ## Introduction
 
-In this workshop, we will explore practical applications of Large Language Models (LLMs) and discuss strategies for generating structured outputs, ensuring topical relevance, preventing hallucinations, avoiding data leakage, and installing safety guardrails on third-party applications accessed by LLMs.
+In this workshop, we will explore safeguarding Large Language Models (LLMs) and discuss strategies for generating structured outputs, ensuring topical relevance, preventing hallucinations, avoiding data leakage, and installing safety guardrails on third-party applications accessed by LLMs. We will be using the excellent open source library, [Nemo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) for this purpose.
 
 ## Installation
 
@@ -37,7 +35,15 @@ To run the code on your local machine, follow these steps:
     cd workshop-llm-safeguarding
     ```
 
-2. **Install the required packages:**
+2. **(Optional) Create and activate a virtual environment:**
+
+    ```bash
+    python -m venv safeguarding-venv
+    source safeguarding-venv/bin/activate  
+    # On Windows use `safeguarding-venv\Scripts\activate`
+    ```
+
+3. **Install the required packages:**
 
     Ensure you have Python 3.8+ installed. Then, run:
 
@@ -45,15 +51,17 @@ To run the code on your local machine, follow these steps:
     pip install -r requirements.txt
     ```
 
-3. **Run the demo notebook:**
+    A C++ runtime is required for the `annoy` library used by `nemoguardrails`. Most computers have an instance installed, but if needed, you can follow instructions on how to install it for your platform [here](https://docs.nvidia.com/nemo/guardrails/getting_started/installation-guide.html#prerequisites).
 
-    Start Jupyter Notebook and open `demo.ipynb`:
+4. **Run the demo notebook:**
+
+    Start Jupyter Notebook and open `workshop.ipynb`:
 
     ```bash
     jupyter notebook
     ```
 
-    Open `demo.ipynb` and run the cells to follow along with the workshop.
+    Open `workshop.ipynb` and run the cells to follow along with the workshop.
 
 ### Google Colab
 
@@ -61,7 +69,7 @@ You can also run the code in Google Colab. Follow these steps:
 
 1. **Open the repository in Colab:**
 
-    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/sshkhr/safeguarding-llms/blob/main/demo.ipynb)
+    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/sshkhr/safeguarding-llms/blob/main/workshop.ipynb)
 
 2. **Make a copy of the notebook:**
 
@@ -73,7 +81,7 @@ You can also run the code in Google Colab. Follow these steps:
 
 ## Usage
 
-The primary notebook `demo.ipynb` contains examples and exercises that will be covered during the workshop. You can modify and experiment with the code to better understand the concepts discussed.
+The primary notebook `workshop.ipynb` contains examples and exercises that will be covered during the workshop. You can modify and experiment with the code to better understand the concepts discussed.
 
 ## Slides
 
@@ -87,4 +95,6 @@ We welcome contributions to improve this repository! If you have suggestions or 
 
 For any questions or further information, please contact us at [shashank@dice.health](mailto:shashank@dice.health).
 
-Happy coding! 😄
+[![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/sshkhr16)](https://twitter.com/sshkhr16)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5)](https://linkedin.com/in/sshkhr)
+[![GitHub followers](https://img.shields.io/github/followers/sshkhr)](https://github.com/sshkhr)
