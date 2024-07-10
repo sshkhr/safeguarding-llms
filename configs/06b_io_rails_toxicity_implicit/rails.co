@@ -1,0 +1,9 @@
+define flow llama guard check input
+    user ask general
+    $llama_guard_response = execute llama_guard(messages=$messages)
+    bot answer llama_guard_response
+
+define flow llama guard check output
+    bot answer general
+    $llama_guard_response = execute llama_guard(messages=$messages)
+    bot answer llama_guard_response

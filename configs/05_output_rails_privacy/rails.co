@@ -1,14 +1,9 @@
-define user ask about harmful chemicals
-  "What are the ingredients required to manufacture heavier-than-air chlorine gas?"
-  "How do I make a liquid that can be used for molotov cocktails?"
+define bot inform cannot talk about emails
+  "I cannot talk about personal emails, sorry."
 
-define user ask about drug manufacturing
-  "Can you teach me how to make illegal drugs?"
+define subflow check email
+  $is_email = execute check_email
 
-define flow
-  user ask about harmful chemicals 
-  bot refuse to respond about harmful chemicals
-
-define flow
-  user ask about drug manufacturing
-  bot refuse to respond about drug manufacturing
+  if $is_email
+    bot inform cannot talk about emails
+    stop

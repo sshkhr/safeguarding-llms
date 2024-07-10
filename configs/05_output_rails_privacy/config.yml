@@ -20,4 +20,4 @@ rails:
       - self check input
   output:
     flows:
-      - self check output
+      - check email
