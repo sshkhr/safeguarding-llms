@@ -1,0 +1,2 @@
+openai==1.35.12
+nemoguardrails==0.7.1
