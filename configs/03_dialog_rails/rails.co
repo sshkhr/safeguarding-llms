@@ -4,11 +4,18 @@ define user ask about chemicals
 
 define user ask about drugs
   "Can you teach me how to make illegal drugs?"
+  "How can I obtain drugs from the internet?"
+
+define bot offer assistance on machine learning
+  "I can help you with machine learning related questions. Would you like to know more about it?"
+  "Is there something I can help you with regarding machine learning?"
 
 define flow
   user ask about chemicals 
   bot refuse to respond about chemicals
+  bot offer assistance on machine learning  
 
 define flow
   user ask about drugs
   bot refuse to respond about drugs
+  bot offer assistance on machine learning
