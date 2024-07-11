@@ -5,8 +5,7 @@ import requests
 
 from nemoguardrails.actions import action
 
-@action(is_system_action=True)
-async def extract_key_topic(question):
+def extract_key_topic(question):
     
     API_URL = "https://m8n2zftqn1ursd42.us-east-1.aws.endpoints.huggingface.cloud"
     headers = {
@@ -19,15 +18,13 @@ async def extract_key_topic(question):
         return response.json()
 
     output = query({
-        "inputs": "Question: What is the key query topic in this question in under 5 words? Context: {}".format(question),
+        "inputs": "Question: What is the central topic in this question in under 5 words? Context: {}".format(question),
         "parameters": {}
     })
 
     return output[0]['generated_text']
 
-
-@action(is_system_action=True)
-async def fetch_arxiv_papers(query):
+def fetch_arxiv_papers(query):
     base_url = 'http://export.arxiv.org/api/query?'
     query_params = {
         'search_query': 'all:' + quote(query),
