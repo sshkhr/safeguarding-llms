@@ -10,6 +10,7 @@ Welcome to the official repository for the workshop **"A Practitioner's Guide To
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Prior Setup](#prior-setup)
 - [Installation](#installation)
   - [Local Machine](#local-machine)
   - [Google Colab](#google-colab)
@@ -21,6 +22,16 @@ Welcome to the official repository for the workshop **"A Practitioner's Guide To
 ## Introduction
 
 In this workshop, we will explore safeguarding Large Language Models (LLMs) and discuss strategies for generating structured outputs, ensuring topical relevance, preventing hallucinations, avoiding data leakage, and installing safety guardrails on third-party applications accessed by LLMs. We will be using the excellent open source library, [Nemo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) for this purpose.
+
+## Prior Setup
+
+Before you begin with the installation, please set up the following:
+
+1. **LLM Configuration:** We use gpt-3.5-turbo-instruct as our LLM for experimentation. Ensure you have set the `OPENAI_API_KEY` environment variable. This can be done in a `.env` file or directly in the code where required.
+   
+2. **Guardrails using Hosted Models:** For the guardrails, we utilized hosted HuggingFace inference endpoints. Post the TMLS workshop, these will not be available anymore:
+   - **Topic Extraction Tool:** In `04_hallucination_tools_rails`, we use the function `utils.py/def_extract_key_topic()` on Line 10 uses a question answering model from [HuggingFace T5-base model fine-tuned on QASC](https://huggingface.co/mrm8488/t5-base-finetuned-qasc). You will need to host this model yourself as an endpoint to recreate the same functionality.
+   - **Toxicity and Implicit Output Rails:** In `06_toxicity_implicit_output_rails/actions.py`, we call the Llama Guard 7B model on Line 14 from [HuggingFace Llama Guard 7B](https://huggingface.co/meta-llama/LlamaGuard-7b). You will need to apply for access to Meta and HF, and then host an inference endpoint to use this model.
 
 ## Installation
 
@@ -89,11 +100,11 @@ The slides for the workshop can be accessed [here](https://docs.google.com/prese
 
 ## Contributing
 
-We welcome contributions to improve this repository! If you have suggestions or find any issues, please feel free to create a pull request or open an issue.
+Contributions to improve this repository are always welcome! If you have suggestions or find any issues, please feel free to create a pull request or open an issue.
 
 ## Contact
 
-For any questions or further information, please contact us at [shashank@dice.health](mailto:shashank@dice.health).
+For any questions or further information, please contact me at [shashank@dice.health](mailto:shashank@dice.health).
 
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/sshkhr16)](https://twitter.com/sshkhr16)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5)](https://linkedin.com/in/sshkhr)
