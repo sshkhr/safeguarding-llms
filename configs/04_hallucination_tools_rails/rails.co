@@ -20,6 +20,6 @@ define user ask about latest_research
 
 define flow latest_research
     user ask about latest_research
-    $topic = execute extract_key_topic(query=$question)
+    $topic = execute extract_key_topic(question=$question)
     $papers = execute fetch_arxiv_papers(query=$topic)
     bot answer papers

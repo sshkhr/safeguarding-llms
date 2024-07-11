@@ -1,3 +1,5 @@
 openai==1.35.12
 nemoguardrails==0.7.1
 transformers==4.42.3
+shutup==0.2.0
+loguru==0.7.2
