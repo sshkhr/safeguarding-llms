@@ -4,18 +4,6 @@ import xml.etree.ElementTree as ET
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
-import re
-
-
-def contains_email(text):
-    # Regular expression pattern to match an email address
-    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-    
-    # Search for the pattern in the given text
-    match = re.search(email_pattern, text)
-    
-    # Return True if a match is found, else False
-    return match is not None
 
 
 def extract_key_topic(query):
@@ -30,12 +18,6 @@ def extract_key_topic(query):
     ])
 
     return response.choices[0].message.content
-
-
-# Example usage
-# sentence = "What are some latest papers on key value caching?"
-# key_topic = extract_key_topic(sentence)
-# print(key_topic)
 
 
 def fetch_arxiv_papers(query):
@@ -80,24 +62,4 @@ def fetch_arxiv_papers(query):
         return None
 
 
-# Example usage:
-# query = 'KV caching'
-# papers = fetch_arxiv_papers(query)
-# if papers:
-#     print(papers)
 
-def llama_guard_api_call(user_message):
-    from huggingface_hub import InferenceClient
-
-    client = InferenceClient(
-        "meta-llama/Meta-Llama-Guard-2-8B",
-        token=os.getenv('HF_TOKEN'),
-    )
-
-    response = client.chat_completion(
-        messages=[{"role": "user", "content": user_message}],
-        max_tokens=500,
-        stream=False,
-    )
-    
-    return response.choices[0].delta.content
