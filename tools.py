@@ -32,12 +32,6 @@ def extract_key_topic(query):
     return response.choices[0].message.content
 
 
-# Example usage
-# sentence = "What are some latest papers on key value caching?"
-# key_topic = extract_key_topic(sentence)
-# print(key_topic)
-
-
 def fetch_arxiv_papers(query):
     base_url = 'http://export.arxiv.org/api/query?'
     query_params = {
@@ -78,26 +72,3 @@ def fetch_arxiv_papers(query):
     except urllib.error.URLError as e:
         print(f"Error fetching data from Arxiv API: {e}")
         return None
-
-
-# Example usage:
-# query = 'KV caching'
-# papers = fetch_arxiv_papers(query)
-# if papers:
-#     print(papers)
-
-def llama_guard_api_call(user_message):
-    from huggingface_hub import InferenceClient
-
-    client = InferenceClient(
-        "meta-llama/Meta-Llama-Guard-2-8B",
-        token=os.getenv('HF_TOKEN'),
-    )
-
-    response = client.chat_completion(
-        messages=[{"role": "user", "content": user_message}],
-        max_tokens=500,
-        stream=False,
-    )
-    
-    return response.choices[0].delta.content
